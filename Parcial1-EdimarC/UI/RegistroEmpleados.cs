@@ -102,8 +102,14 @@ namespace Parcial1_EdimarC.UI
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
-            EmpleadosBLL.Eliminar(util.String(IdtextBox.Text));
-            MessageBox.Show("Eliminado");
+            if (IdtextBox.Text == "")
+            {
+                MessageBox.Show("Debe ingresar el Id");
+            }
+            else {
+                EmpleadosBLL.Eliminar(util.String(IdtextBox.Text));
+                MessageBox.Show("Eliminado");
+            }
         }
 
         private void Nuevobutton_Click_1(object sender, EventArgs e)
