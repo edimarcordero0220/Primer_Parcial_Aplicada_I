@@ -16,7 +16,7 @@ namespace Parcial1_EdimarC
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new RegistroEmpleados());
+            Application.Run(new Principal());
         }
     }
 }

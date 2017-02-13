@@ -39,7 +39,7 @@
             this.IdtextBox = new System.Windows.Forms.TextBox();
             this.NombretextBox = new System.Windows.Forms.TextBox();
             this.SueldotextBox = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.fechadateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label1
@@ -86,6 +86,7 @@
             this.Nuevobutton.TabIndex = 4;
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.UseVisualStyleBackColor = true;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click_1);
             // 
             // Guardarbutton
             // 
@@ -105,6 +106,7 @@
             this.Eliminarbutton.TabIndex = 6;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.UseVisualStyleBackColor = true;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
             // Buscarbutton
             // 
@@ -114,6 +116,7 @@
             this.Buscarbutton.TabIndex = 7;
             this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // IdtextBox
             // 
@@ -136,20 +139,20 @@
             this.SueldotextBox.Size = new System.Drawing.Size(100, 20);
             this.SueldotextBox.TabIndex = 11;
             // 
-            // dateTimePicker1
+            // fechadateTimePicker1
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(136, 130);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(88, 20);
-            this.dateTimePicker1.TabIndex = 12;
+            this.fechadateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.fechadateTimePicker1.Location = new System.Drawing.Point(136, 130);
+            this.fechadateTimePicker1.Name = "fechadateTimePicker1";
+            this.fechadateTimePicker1.Size = new System.Drawing.Size(88, 20);
+            this.fechadateTimePicker1.TabIndex = 12;
             // 
             // RegistroEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(596, 343);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.fechadateTimePicker1);
             this.Controls.Add(this.SueldotextBox);
             this.Controls.Add(this.NombretextBox);
             this.Controls.Add(this.IdtextBox);
@@ -181,6 +184,6 @@
         private System.Windows.Forms.TextBox IdtextBox;
         private System.Windows.Forms.TextBox NombretextBox;
         private System.Windows.Forms.TextBox SueldotextBox;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker fechadateTimePicker1;
     }
 }

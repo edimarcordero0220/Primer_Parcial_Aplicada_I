@@ -54,9 +54,20 @@ namespace Parcial1_EdimarC.BLL
         {
             List<Empleados> lista = new List<Empleados>();
             Parcial1Ap1Db db = new Parcial1Ap1Db();
-            lista = db.Empleado.Where(p => p.Nombre == tmp).ToList();
+            lista = db.Empleado.Where(p => p.Nombres == tmp).ToList();
             return lista;
         }
+
+        internal static object GetLista(int selectedValue, DateTime value1, DateTime value2)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal static object GetListaNombre(int selectedValue, DateTime value1, DateTime value2)
+        {
+            throw new NotImplementedException();
+        }
+
         public static List<Empleados> GetLista()
         {
             List<Empleados> lista = new List<Empleados>();

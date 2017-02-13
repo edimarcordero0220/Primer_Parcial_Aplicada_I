@@ -12,9 +12,9 @@ namespace Parcial1_EdimarC.Entidades
 
         public int EmpleadoId { get; set; }
 
-        public string Nombre { get; set; }
+        public string Nombres { get; set; }
 
-        public DateTime FechaNacimeinto { get; set; }
+        public DateTime FechaNacimiento { get; set; }
 
         public double sueldo { get; set; }
         
