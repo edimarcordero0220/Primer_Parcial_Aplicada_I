@@ -1,4 +1,4 @@
-﻿use Parcial1Ap1Db;
+use Parcial1Ap1Db;
 
 
 create table Empleados(
