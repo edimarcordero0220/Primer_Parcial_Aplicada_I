@@ -16,7 +16,9 @@ namespace Parcial1_EdimarC.Entidades
 
         public DateTime FechaNacimiento { get; set; }
 
-        public double sueldo { get; set; }
-        
+     
+
+        public string Sueldos { get; set; }
+
     }
 }

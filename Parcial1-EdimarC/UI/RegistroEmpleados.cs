@@ -22,7 +22,7 @@ namespace Parcial1_EdimarC.UI
         {
             e.Nombres = NombretextBox.Text;
             e.FechaNacimiento = fechadateTimePicker1.Value;
-            //SueldotextBox.Text = e.sueldo;
+            SueldotextBox.Text = e.Sueldos;
            
             
         }
@@ -30,23 +30,40 @@ namespace Parcial1_EdimarC.UI
         {
             
 
-            if (IdtextBox.Text == "" || NombretextBox.Text == "" || SueldotextBox.Text == "")
+            if (NombretextBox.Text == "" || SueldotextBox.Text == "")
             {
                 MessageBox.Show("Existen Campos Vacio, favor llene completamente");
             }
             else
             {
+                
                 Empleados empleado = new Empleados();
                 LlenarClase(empleado);
                 EmpleadosBLL.Guardar(empleado);
-                MessageBox.Show("Registro Exitoso!!!");
+                MessageBox.Show("Registro fue realizado Exitosamente!!!");
             }
         }
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
             ValidarBuscar();
-            BuscarEmpleado(EmpleadosBLL.Buscar(String(IdtextBox.Text)));
+            int id = int.Parse(IdtextBox.Text);
+            Empleados empleo;
+            using (var db = new BLL.Repositorio<Empleados>())
+            {
+                empleo = db.Buscar(p => p.EmpleadoId == id);
+                if(empleo != null)
+                {
+                    NombretextBox.Text = empleo.Nombres;
+                    SueldotextBox.Text = empleo.Sueldos;
+                    fechadateTimePicker1.Text = empleo.FechaNacimiento.ToString();
+                    MessageBox.Show("Empleado Buscado");
+                }else
+                {
+                    MessageBox.Show("Empleado No Existe, favor verifique el Id");
+                }
+            }
+            //BuscarEmpleado(EmpleadosBLL.Buscar(String(IdtextBox.Text)));
             
         }
         public int String(string texto)
@@ -75,6 +92,7 @@ namespace Parcial1_EdimarC.UI
                 IdtextBox.Text = empleado.EmpleadoId.ToString();
                 NombretextBox.Text = empleado.Nombres.ToString();
                 fechadateTimePicker1.Value = empleado.FechaNacimiento;
+                SueldotextBox.Text = empleado.Sueldos.ToString();
                 
 
 
@@ -107,8 +125,22 @@ namespace Parcial1_EdimarC.UI
                 MessageBox.Show("Debe ingresar el Id");
             }
             else {
-                EmpleadosBLL.Eliminar(util.String(IdtextBox.Text));
-                MessageBox.Show("Eliminado");
+                /* EmpleadosBLL.Eliminar(util.String(IdtextBox.Text));
+                 MessageBox.Show("Eliminado");*/
+                int id = int.Parse(IdtextBox.Text);
+                using (var db = new BLL.Repositorio<Empleados>())
+                {
+                    if (db.Eliminar(db.Buscar(p => p.EmpleadoId == id)))
+                    {
+                        MessageBox.Show("Empleado eliminado correctamente");
+                        IdtextBox.Text = "";
+                        NombretextBox.Text = "";
+                        SueldotextBox.Text = "";
+                    }else
+                    {
+                        MessageBox.Show("No se ha podido eliminar empleado");
+                    }
+                }
             }
         }
 
@@ -117,6 +149,11 @@ namespace Parcial1_EdimarC.UI
             IdtextBox.Text = "";
             NombretextBox.Text = "";
             SueldotextBox.Text = "";
+        }
+
+        private void SueldotextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

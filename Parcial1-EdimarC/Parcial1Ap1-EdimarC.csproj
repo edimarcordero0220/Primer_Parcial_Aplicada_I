@@ -69,6 +69,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\EmpleadosBLL.cs" />
+    <Compile Include="BLL\Repositorio.cs" />
+    <Compile Include="BLL\RepositoryBLL.cs" />
+    <Compile Include="DAL\IRepositoriy.cs" />
     <Compile Include="DAL\Parcial1Ap1Db.cs" />
     <Compile Include="Entidades\Empleados.cs" />
     <Compile Include="Program.cs" />

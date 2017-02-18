@@ -47,18 +47,18 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(21, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(16, 13);
+            this.label1.Size = new System.Drawing.Size(72, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Id";
+            this.label1.Text = "Id del Usuario";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(21, 85);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.Size = new System.Drawing.Size(98, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Nombre";
+            this.label2.Text = "Nombre de Usuario";
             // 
             // label3
             // 
@@ -138,6 +138,7 @@
             this.SueldotextBox.Name = "SueldotextBox";
             this.SueldotextBox.Size = new System.Drawing.Size(100, 20);
             this.SueldotextBox.TabIndex = 11;
+            this.SueldotextBox.TextChanged += new System.EventHandler(this.SueldotextBox_TextChanged);
             // 
             // fechadateTimePicker1
             // 
